@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/Diagnostics" name="Diagnostics" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/DiagnosticReport*">
+        <inSequence>
+            <!--Capture the hospital name from the request -->
+            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
+            <!--Obtain the value for the respected hospitalName parameter from the local registry-->
+            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the header is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <property expression="$url:startDate" name="startDate" scope="default" type="STRING"/>
+                    <property expression="$url:endDate" name="endDate" scope="default" type="STRING"/>
+                    <property expression="$url:subject" name="subject" scope="default" type="STRING"/>
+                    <property expression="$url:count" name="count" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchDiagnosticReport>
+                                <patient>{$ctx:patient}</patient>
+                                <subject>{$ctx:subject}</subject>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                                <count>{$ctx:count}</count>
+                            </cerner.searchDiagnosticReport>
+                            <respond/>
+                        </case>
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.searchDiagnosticReport>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                            </epic.searchDiagnosticReport>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The Hospital-Name parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <header action="remove" name="To" scope="default"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <send/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/Observation*">
+        <inSequence>
+            <!--Capture the hospital name from the request -->
+            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
+            <!--Obtain the value for the respected hospitalName parameter-->
+            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <property expression="$url:startDate" name="startDate" scope="default" type="STRING"/>
+                    <property expression="$url:endDate" name="endDate" scope="default" type="STRING"/>
+                    <property expression="$url:subject" name="subject" scope="default" type="STRING"/>
+                    <property expression="$url:count" name="count" scope="default" type="STRING"/>
+                    <property expression="$url:code" name="code" scope="default" type="STRING"/>
+                    <property expression="$url:category" name="category" scope="default" type="STRING"/>
+                    <property expression="$url:initalIssueDate" name="initalIssueDate" scope="default" type="STRING"/>
+                    <property expression="$url:finalIssueDate" name="finalIssueDate" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchObservation>
+                                <patient>{$ctx:patient}</patient>
+                                <subject>{$ctx:subject}</subject>
+                                <code>{$ctx:code}</code>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                                <category>{$ctx:category}</category>
+                                <count>{$ctx:count}</count>
+                            </cerner.searchObservation>
+                            <respond/>
+                        </case>
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.searchObservation>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <code>{$ctx:code}</code>
+                                <category>{$ctx:category}</category>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                                <startIssued>{$ctx:initalIssueDate}</startIssued>
+                                <endIssued>{$ctx:finalIssueDate}</endIssued>
+                            </epic.searchObservation>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The Hospital-Name parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <header action="remove" name="To" scope="default"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <send/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET">
+        <inSequence/>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

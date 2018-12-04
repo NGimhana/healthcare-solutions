@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/Medications" name="Medications" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/MedicationStatement*">
+        <inSequence>
+            <!--Capture the header from the request -->
+            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
+            <!--Obtain the value for the respected header parameter-->
+            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the header is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <property expression="$url:status" name="status" scope="default" type="STRING"/>
+                    <property expression="$url:count" name="count" scope="default" type="STRING"/>
+                    <property expression="$url:startEffectiveDate" name="startEffectiveDate" scope="default" type="STRING"/>
+                    <property expression="$url:endEffectiveDate" name="endEffectiveDate" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchMedicationStatement>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <status>{$ctx:status}</status>
+                                <count>{$ctx:count}</count>
+                            </cerner.searchMedicationStatement>
+                            <respond/>
+                        </case>
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.searchMedicationStatement>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <status>{$ctx:status}</status>
+                                <startEffectiveDate>{$ctx:startEffectiveDate}</startEffectiveDate>
+                                <endEffectiveDate>{$ctx:endEffectiveDate}</endEffectiveDate>
+                            </epic.searchMedicationStatement>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <header action="remove" name="To" scope="default"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <send/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/Immunization*">
+        <inSequence>
+            <!--Capture the header from the request -->
+            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
+            <!--Obtain the value for the respected header parameter-->
+            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <log level="custom">
+                <property expression="$ctx:ehrSystem" name="Hospital Registry value"/>
+            </log>
+            <!--Check if the header is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:startDate" name="startDate" scope="default" type="STRING"/>
+                    <property expression="$url:endDate" name="endDate" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchImmunization>
+                                <earliestDate>{$ctx:startDate}</earliestDate>
+                                <latestDate>{$ctx:endDate}</latestDate>
+                                <patient>{$ctx:patient}</patient>
+                            </cerner.searchImmunization>
+                            <respond/>
+                        </case>
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.searchImmunization>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                            </epic.searchImmunization>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <header action="remove" name="To" scope="default"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <send/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/MedicationAdministration*">
+        <inSequence>
+            <!--Capture the header from the request -->
+            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
+            <!--Obtain the value for the respected header parameter-->
+            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the header is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:status" name="status" scope="default" type="STRING"/>
+                    <property expression="$url:practitioner" name="practitioner" scope="default" type="STRING"/>
+                    <property expression="$url:notGiven" name="notGiven" scope="default" type="STRING"/>
+                    <property expression="$url:startEffectiveTime" name="startEffectiveTime" scope="default" type="STRING"/>
+                    <property expression="$url:endEffectiveTime" name="endEffectiveTime" scope="default" type="STRING"/>
+                    <property expression="$url:count" name="count" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchMedicationAdministration>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <status>{$ctx:status}</status>
+                                <practitioner>{$ctx:practitioner}</practitioner>
+                                <notGiven>{$ctx:notGiven}</notGiven>
+                                <startEffectiveTime>{$ctx:startEffectiveTime}</startEffectiveTime>
+                                <endEffectiveTime>{$ctx:endEffectiveTime}</endEffectiveTime>
+                                <count>{$ctx:count}</count>
+                            </cerner.searchMedicationAdministration>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <header action="remove" name="To" scope="default"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <send/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/Medication*">
+        <inSequence>
+            <!--Capture the header from the request -->
+            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
+            <!--Obtain the value for the respected header parameter-->
+            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the header is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.readById>
+                                <type>Medication</type>
+                                <id>{$ctx:id}</id>
+                            </epic.readById>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <header action="remove" name="To" scope="default"/>
+                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <send/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET">
+        <inSequence/>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

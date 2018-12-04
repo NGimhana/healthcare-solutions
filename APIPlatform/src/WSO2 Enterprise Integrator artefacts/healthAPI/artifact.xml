@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="HospitalA" groupId="com.example.healthAPI.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/HospitalA.xml</file>
+    </artifact>
+    <artifact name="HospitalB" groupId="com.example.healthAPI.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/HospitalB.xml</file>
+    </artifact>
+    <artifact name="Diagnostics" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Diagnostics.xml</file>
+    </artifact>
+    <artifact name="CareProvision" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CareProvision.xml</file>
+    </artifact>
+    <artifact name="Medications" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Medications.xml</file>
+    </artifact>
+    <artifact name="GeneralClinical" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/GeneralClinical.xml</file>
+    </artifact>
+    <artifact name="Devices" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Devices.xml</file>
+    </artifact>
+</artifacts>

@@ -1,1 +1,9 @@
 /.metadata/
+
+*.meta
+
+# EI CAPP Temp files
+RemoteSystemsTempFiles
+*.metadata
+*.tmp
+*.idea

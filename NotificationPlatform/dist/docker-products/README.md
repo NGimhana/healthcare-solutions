@@ -7,25 +7,7 @@
 
 #### Initial Setup
 
-1. Clone the project. ${base_dir}=NotificationPlatform
-
-2. Download and install [Apache Kafka](http://kafka.apache.org/downloads.html). For more information, see [Apache Kafka documentation](http://kafka.apache.org/documentation.html).  
-
-3. Copy the following client libraries from the <KAFKA_HOME>/lib directory to the ${base_dir}/dist/docker-products/docker-ei/dockerfiles/ubuntu/integrator/files directory.
-   
-   * kafka_2.11-2.0.0.jar
-   * kafka-clients-2.0.0.jar
-   * metrics-core-2.2.0.jar
-   * scala-library-2.11.12.jar
-   * zkclient-0.10.jar
-   * zookeeper-3.4.13.jar
-
-4. Download WSO2 EI Kafka Inbound EndPoint and copy above files directory
- 
-   * [org.apache.synapse.kafka.poll-1.0.5](https://store.wso2.com/store/assets/esbconnector/details/b15e9612-5144-4c97-a3f0-179ea583be88)
-
-5. Convert and copy the kafka client jars mentioned under step 3 to ${base_dir}/dist/docker-sp/docker-products/docker-sp/dockerfiles/ubuntu/dashboard/files/libs directory
-   Refer [Supporting Different Transports WSO2 SP](https://docs.wso2.com/display/SP4xx/Supporting+Different+Transports#SupportingDifferentTransports-KafkatransportKafka) 
+1. Clone the project. ${base_dir}=NotificationPlatform 
 
 2. Head to docker-products directory and execute docker-compose
 
@@ -117,8 +99,7 @@ eg: [Input Stream]hemoglobin-epic => [Output Stream]bloodhemoglobin-epic-alert
 Lets create a API for Healthcare Alerts using the swagger provided.
 Follow below steps to quickly deploy the Healthcare Alert API , publish it, subscribe to it, and invoke it.
  
-1 . Open the API Publisher (https://localhost:9453/publisher) and sign in with admin/admin credentials.
-
+1 . Open the API Publisher (https://<hostname>:9443/publisher) and sign in with admin/admin credentials.
 2 . Exit from API creation tutorial by clicking the close icon(X) on top right corner.
 
 ![create api](../../src/docs/Guidelinescreenshots/createnewapi.png)

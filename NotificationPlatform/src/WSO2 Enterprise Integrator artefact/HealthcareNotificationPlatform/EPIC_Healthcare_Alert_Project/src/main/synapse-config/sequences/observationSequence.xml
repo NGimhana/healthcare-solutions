@@ -3,48 +3,37 @@
     <log description="Log" level="custom">
         <property name="Log" value="Request Came"/>
     </log>
-    <property description="Report" expression="json-eval($.event.report)" name="uri.var.report" scope="default"
-              type="STRING"/>
-    <property description="reportdate" expression="json-eval($.event.reportdate)" name="uri.var.reportdate"
-              scope="default" type="STRING"/>
-    <property description="result" expression="json-eval($.event.result)" name="uri.var.result" scope="default"
-              type="STRING"/>
-    <property description="Sender Email" expression="json-eval($.event.email)" name="uri.var.senderemail"
-              scope="default" type="STRING"/>
-    <property description="GetPatientID" expression="json-eval($.event.patientId)" name="uri.var.patientid"
-              scope="default" type="STRING"/>
-    <property description="reportId" expression="json-eval($.event.reportId)" name="uri.var.reportId" scope="default"
-              type="STRING"/>
-    <property description="myValue" expression="json-eval($.event.myValue)" name="uri.var.myValue" scope="default"
-              type="STRING"/>
-    <property description="lowValue" expression="json-eval($.event.lowValue)" name="uri.var.lowValue" scope="default"
-              type="STRING"/>
-    <property description="highValue" expression="json-eval($.event.highValue)" name="uri.var.highValue" scope="default"
-              type="STRING"/>
-    <log level="custom">
-        <property expression="get-property('uri.var.patientid')" name="PatientID"/>
-    </log>
+    <property description="Report" expression="json-eval($.event.report)" name="uri.var.report" scope="default" type="STRING"/>
+    <property description="reportdate" expression="json-eval($.event.reportdate)" name="uri.var.reportdate" scope="default" type="STRING"/>
+    <property description="result" expression="json-eval($.event.result)" name="uri.var.result" scope="default" type="STRING"/>
+    <property description="Sender Email" expression="json-eval($.event.email)" name="uri.var.senderemail" scope="default" type="STRING"/>
+    <property description="GetPatientID" expression="json-eval($.event.patientId)" name="uri.var.patientid" scope="default" type="STRING"/>
+    <property description="reportId" expression="json-eval($.event.reportId)" name="uri.var.reportId" scope="default" type="STRING"/>
+    <property description="myValue" expression="json-eval($.event.myValue)" name="uri.var.myValue" scope="default" type="STRING"/>
+    <property description="lowValue" expression="json-eval($.event.lowValue)" name="uri.var.lowValue" scope="default" type="STRING"/>
+    <property description="highValue" expression="json-eval($.event.highValue)" name="uri.var.highValue" scope="default" type="STRING"/>
     <!-- EPIC CONNECTOR INITIALIZATION -->
-    <sequence key="EPIC_CONNECTOR_INITIALIZATION"/>
-    <epic.searchPatient>
+    <!--  <sequence key="EPIC_CONNECTOR_INITIALIZATION"/> -->
+    <!--  <epic.searchPatient>
         <id>{$ctx:uri.var.patientid}</id>
-    </epic.searchPatient>
-    <property description="Patient Name" expression="json-eval($.name[0].text)" name="uri.var.patientName"
-              scope="default" type="STRING"/>
-    <property description="Home Address Line" expression="json-eval($.address[0].line[0])" name="uri.var.patientAddress"
-              scope="default" type="STRING"/>
-    <property description="Home Address City" expression="json-eval($.address[0].city)" name="uri.var.addressCity"
-              scope="default" type="STRING"/>
-    <property description="Home Address State" expression="json-eval($.address[0].state)" name="uri.var.addressState"
-              scope="default" type="STRING"/>
-    <property description="Home Phone" expression="json-eval($.telecom[0].value)" name="uri.var.homePhone"
-              scope="default" type="STRING"/>
-    <property description="Email" expression="json-eval($.telecom[5].value)" name="uri.var.email" scope="default"
-              type="STRING"/>
-    <property description="Gender" expression="json-eval($.gender)" name="uri.var.gender" scope="default"
-              type="STRING"/>
-    <property description="BirthDate" expression="json-eval($.birthDate)" name="uri.var.birthdate" scope="default"
-              type="STRING"/>
+    </epic.searchPatient>  -->
+    <header name="Accept" scope="transport" value="application/json"/>
+    <call>
+        <endpoint>
+            <http method="get" uri-template="https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/{uri.var.patientid}"/>
+        </endpoint>
+    </call>
+    <property description="Patient Name" expression="json-eval($.name[0].text)" name="uri.var.patientName" scope="default" type="STRING"/>
+    <log level="custom">
+        <property expression="get-property('uri.var.patientName')" name="Patient Name"/>
+    </log>
+    <property description="Home Address Line" expression="json-eval($.address[0].line[0])" name="uri.var.patientAddress" scope="default" type="STRING"/>
+    <property description="Home Address City" expression="json-eval($.address[0].city)" name="uri.var.addressCity" scope="default" type="STRING"/>
+    <property description="Home Address State" expression="json-eval($.address[0].state)" name="uri.var.addressState" scope="default" type="STRING"/>
+    <property description="Home Phone" expression="json-eval($.telecom[0].value)" name="uri.var.homePhone" scope="default" type="STRING"/>
+    <property description="Email" expression="json-eval($.telecom[5].value)" name="uri.var.email" scope="default" type="STRING"/>
+    <property description="Gender" expression="json-eval($.gender)" name="uri.var.gender" scope="default" type="STRING"/>
+    <property description="BirthDate" expression="json-eval($.birthDate)" name="uri.var.birthdate" scope="default" type="STRING"/>
     <!-- Checks Whether Patient exists in Patient Table -->
     <payloadFactory media-type="xml">
         <format>
@@ -53,14 +42,13 @@
             </p:allPatientsByPatientIdOp>
         </format>
         <args>
-            <arg evaluator="xml" expression="get-property('uri.var.patientid')"/>
+            <arg evaluator="xml" expression="get-property('patientid')"/>
         </args>
     </payloadFactory>
     <call>
         <endpoint key="conf:repository/esb/registry/SelectPatientByPatientIdEP.xml"/>
     </call>
-    <property description="Patient Id from Response" expression="json-eval($.Patients.Patient.patientId)"
-              name="uri.var.patientidDB" scope="default" type="STRING"/>
+    <property description="Patient Id from Response" expression="json-eval($.Patients.Patient.patientId)" name="uri.var.patientidDB" scope="default" type="STRING"/>
     <!-- Checks whether Report exists in DiagnosticReport Table -->
     <payloadFactory media-type="xml">
         <format>
@@ -75,8 +63,7 @@
     <call>
         <endpoint key="conf:repository/esb/registry/SelectReportByReportIdEP.xml"/>
     </call>
-    <property description="Report Id from Response" expression="json-eval($.Reports.Report.reportId)"
-              name="uri.var.reportIdDB" scope="default" type="STRING"/>
+    <property description="Report Id from Response" expression="json-eval($.Reports.Report.reportId)" name="uri.var.reportIdDB" scope="default" type="STRING"/>
     <log level="custom">
         <property expression="get-property('uri.var.reportIdDB')" name="LogDBReport"/>
     </log>

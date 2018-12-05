@@ -17,14 +17,11 @@
                     <patient>{$ctx:id}</patient>
                     <code>2345-7</code>
                 </epic.searchObservation>
-                <property description="Error Code"
-                          expression="json-eval($.entry[0].resource.issue[0].details.coding[0].code)"
-                          name="uri.var.issue" scope="default" type="STRING"/>
+                <property description="Error Code" expression="json-eval($.entry[0].resource.issue[0].details.coding[0].code)" name="uri.var.issue" scope="default" type="STRING"/>
                 <log level="custom">
                     <property expression="get-property('uri.var.issue')" name="Issue"/>
                 </log>
-                <filter description="Compares EPIC error code with Response" regex="4101"
-                        source="get-property('uri.var.issue')">
+                <filter description="Compares EPIC error code with Response" regex="4101" source="get-property('uri.var.issue')">
                     <then>
                         <log level="custom">
                             <property name="EPIC_ERROR_CODE" value="4101"/>
@@ -37,10 +34,8 @@
                         </log>
                         <kafkaTransport.init>
                             <bootstrapServers>localhost:9092</bootstrapServers>
-                            <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer
-                            </keySerializerClass>
-                            <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer
-                            </valueSerializerClass>
+                            <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
+                            <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
                         </kafkaTransport.init>
                         <kafkaTransport.publishMessages>
                             <topic>glucose-epic</topic>

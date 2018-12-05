@@ -26,7 +26,7 @@
                "userInputForbootstrap_server": {
                   "fieldName": "Bootstrap Server",
                   "description": "This parameter specifies the list of Kafka servers to which the Kafka sink must publish events. This list should be provided as a set of comma separated values.",
-                  "defaultValue": "localhost:9092"
+                  "defaultValue": "kafka:9092"
                }
             }
          },
@@ -52,7 +52,7 @@
                "userInputForbootstrap_server": {
                   "fieldName": "Bootstrap Server",
                   "description": "This parameter specifies the list of Kafka servers to which the Kafka sink must publish events. This list should be provided as a set of comma separated values.",
-                  "defaultValue": "localhost:9092"
+                  "defaultValue": "kafka:9092"
                },
                "userInputForsender_address": {
                   "fieldName": "Sender Email",

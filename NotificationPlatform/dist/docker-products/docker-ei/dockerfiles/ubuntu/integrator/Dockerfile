@@ -64,7 +64,7 @@ COPY --chown=wso2carbon:wso2 ${FILES}/scala-library-2.12.3.jar ${WSO2_SERVER_HOM
 COPY --chown=wso2carbon:wso2 ${FILES}/zkclient-0.10.jar ${WSO2_SERVER_HOME}/lib/
 COPY --chown=wso2carbon:wso2 ${FILES}/zookeeper-3.4.10.jar ${WSO2_SERVER_HOME}/lib/
 COPY --chown=wso2carbon:wso2 ${FILES}/org.apache.synapse.kafka.poll-1.0.5.jar ${WSO2_SERVER_HOME}/dropins/
-COPY --chown=wso2carbon:wso2 ${FILES}/EPIC_Healthcare_Alert_ProjectCompositeApplication_1.0.0.car ${WSO2_SERVER_HOME}/repository/deployment/server/carbonapps/
+COPY --chown=wso2carbon:wso2 ${FILES}/EPIC_Healthcare_AlertCompositeApplication_1.0.0.car ${WSO2_SERVER_HOME}/repository/deployment/server/carbonapps/
 
 # create directory tree for latest zookeeper support
 RUN mkdir -p ${WSO2_SERVER_HOME}/repository/conf

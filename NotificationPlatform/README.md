@@ -1,6 +1,6 @@
 ## Health-care Notification Platform
 
-##### Used Products : WSO2 EI 6.3.0 , WSO2 SP 4.2.0 , WSO2 APIM 2.5.0
+##### Used Products : WSO2 EI 6.3.0 , WSO2 SP 4.2.0 , WSO2 APIM 2.6.0
 ##### Used Extensions : WSO2 EI EPIC CONNECTOR 1.0.0 
 
 ### Overview

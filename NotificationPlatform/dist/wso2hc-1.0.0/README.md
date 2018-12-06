@@ -124,7 +124,7 @@ eg: [Input Stream]hemoglobin-epic => [Output Stream]bloodhemoglobin-epic-alert
 Lets create a API for Healthcare Alerts using the swagger provided.
 Follow below steps to quickly deploy the Healthcare Alert API , publish it, subscribe to it, and invoke it.
  
-1 . Open the API Publisher (https://localhost:9443/publisher) and sign in with admin/admin credentials.
+1 . Open the API Publisher (https://localhost:9453/publisher) and sign in with admin/admin credentials.
 
 2 . Exit from API creation tutorial by clicking the close icon(X) on top right corner.
 

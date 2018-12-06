@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0b1b9f9-4746-4539-9c9f-4df458bb5b15" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/constants.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="420" column="12" selection-start-line="420" selection-start-column="12" selection-end-line="420" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/SelectedListItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="41" column="60" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/SimpleLineChart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dashboard</find>
+      <find>Dashboard</find>
+      <find>wso2</find>
+      <find>list</find>
+      <find>step</find>
+      <find>drawe</find>
+      <find>medication</find>
+      <find>AllEmployees</find>
+      <find>this is</find>
+      <find>vail</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/ListItems.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleTable.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleLineChart.js" />
+        <option value="$PROJECT_DIR$/src/components/SimplePieChart.js" />
+        <option value="$PROJECT_DIR$/src/components/listItems.js" />
+        <option value="$PROJECT_DIR$/src/components/DashboardPatients.js" />
+        <option value="$PROJECT_DIR$/src/components/DashboardMainContent.js" />
+        <option value="$PROJECT_DIR$/src/components/Drawer.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/CONSTANTS.js" />
+        <option value="$PROJECT_DIR$/src/components/Chart.js" />
+        <option value="$PROJECT_DIR$/src/components/Dashboard.js" />
+        <option value="$PROJECT_DIR$/src/components/SelectedListItem.js" />
+        <option value="$PROJECT_DIR$/src/components/Dou.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleSteppedLineChart.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleExpansionPanel.js" />
+        <option value="$PROJECT_DIR$/src/components/ActiveMedicationOrder.js" />
+        <option value="$PROJECT_DIR$/src/components/MediacardPatientNumber.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleBarChart.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleDoughnut.js" />
+        <option value="$PROJECT_DIR$/src/server.js" />
+        <option value="$PROJECT_DIR$/src/api.js" />
+        <option value="$PROJECT_DIR$/src/constants/constants.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="24" />
+    <option name="width" value="1918" />
+    <option name="height" value="1023" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="alert-dashboard-demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alert-dashboard-demo1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alert-dashboard-demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alert-dashboard-demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alert-dashboard-demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alert-dashboard-demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alert-dashboard-demo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alert-dashboard-demo1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/nadeeshan/ReactProjects/alert-dashboard-demo1/src/App.js" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544067719350" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Temp Gimo Git" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0b1b9f9-4746-4539-9c9f-4df458bb5b15" name="Default Changelist" comment="" />
+      <created>1538308950267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538308950267</updated>
+      <workItem from="1538308951491" duration="700000" />
+      <workItem from="1538309671270" duration="512000" />
+      <workItem from="1538310770484" duration="9862000" />
+      <workItem from="1538366028992" duration="21343000" />
+      <workItem from="1538403605932" duration="2139000" />
+      <workItem from="1538439327220" duration="4837000" />
+      <workItem from="1538453289055" duration="12092000" />
+      <workItem from="1538528981626" duration="282000" />
+      <workItem from="1538586693610" duration="28000" />
+      <workItem from="1538612687431" duration="3135000" />
+      <workItem from="1538626079361" duration="3298000" />
+      <workItem from="1538699389984" duration="4013000" />
+      <workItem from="1538712640105" duration="10529000" />
+      <workItem from="1538760971795" duration="680000" />
+      <workItem from="1538898704460" duration="627000" />
+      <workItem from="1538900041732" duration="18297000" />
+      <workItem from="1538940286292" duration="2616000" />
+      <workItem from="1538971620497" duration="19889000" />
+      <workItem from="1539006468275" duration="779000" />
+      <workItem from="1539045791988" duration="1467000" />
+      <workItem from="1539093352125" duration="414000" />
+      <workItem from="1539153496158" duration="2374000" />
+      <workItem from="1539179834928" duration="1120000" />
+      <workItem from="1539239300106" duration="8910000" />
+      <workItem from="1539251787423" duration="7327000" />
+      <workItem from="1539306898125" duration="1420000" />
+      <workItem from="1539318391528" duration="15267000" />
+      <workItem from="1539356276235" duration="3626000" />
+      <workItem from="1539399710655" duration="4461000" />
+      <workItem from="1539408654414" duration="18779000" />
+      <workItem from="1539483942646" duration="17507000" />
+      <workItem from="1539515681276" duration="678000" />
+      <workItem from="1539539390075" duration="2558000" />
+      <workItem from="1539566491199" duration="1157000" />
+      <workItem from="1539576098519" duration="9263000" />
+      <workItem from="1539589033270" duration="10162000" />
+      <workItem from="1539610183422" duration="5223000" />
+      <workItem from="1539619180584" duration="8360000" />
+      <workItem from="1539651753675" duration="2498000" />
+      <workItem from="1539661949973" duration="9933000" />
+      <workItem from="1539695497404" duration="4297000" />
+      <workItem from="1539735975527" duration="4426000" />
+      <workItem from="1539750192651" duration="7397000" />
+      <workItem from="1539772454193" duration="2349000" />
+      <workItem from="1539779874905" duration="3207000" />
+      <workItem from="1539784526992" duration="646000" />
+      <workItem from="1540861320618" duration="940000" />
+      <workItem from="1540873562746" duration="1639000" />
+      <workItem from="1540960158821" duration="712000" />
+      <workItem from="1540971090977" duration="804000" />
+      <workItem from="1541311167132" duration="1397000" />
+      <workItem from="1541338419149" duration="3093000" />
+      <workItem from="1541512982667" duration="1691000" />
+      <workItem from="1541563847019" duration="1403000" />
+      <workItem from="1542347909345" duration="870000" />
+      <workItem from="1542422073421" duration="15000" />
+      <workItem from="1543288612175" duration="20000" />
+      <workItem from="1543289711300" duration="185000" />
+      <workItem from="1543591924443" duration="909000" />
+      <workItem from="1543778355817" duration="65000" />
+      <workItem from="1543778962726" duration="403000" />
+      <workItem from="1544006863170" duration="958000" />
+      <workItem from="1544008352614" duration="477000" />
+      <workItem from="1544019209621" duration="740000" />
+      <workItem from="1544066305776" duration="1460000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="288265000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-4" width="1920" height="1051" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28335112" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1911447" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32998884" />
+      <window_info anchor="bottom" id="SonarLint" order="12" weight="0.32972974" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3298731" />
+      <window_info anchor="right" id="Maven" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19850586" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="SonarLint" order="0" weight="0.32972974" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32998884" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19783784" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32998884" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3298731" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/CssBaseline/CssBaseline.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/IconButton/IconButton.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/List/List.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Drawer/Drawer.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Images/WSO2_Logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/csstype/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="19483" column="2" selection-start-line="19483" selection-start-column="2" selection-end-line="19483" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/ListItem/ListItem.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/es/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/CardActionArea/CardActionArea.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/recharts/lib/chart/PieChart.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/recharts/es6/polar/Pie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3790">
+          <caret line="190" column="46" lean-forward="true" selection-start-line="190" selection-start-column="46" selection-end-line="190" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleTable.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/mml3/mathml3-content.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/es/Router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/svg11/svg-conditional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/recharts/lib/chart/LineChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-chartjs-2/dist/react-chartjs-2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="330" column="13" selection-start-line="330" selection-start-column="9" selection-end-line="330" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-chartjs-2/es/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3186" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/es/styles/withStyles.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/SvgIcon/SvgIcon.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Drawer/Drawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="254" column="2" selection-start-line="254" selection-start-column="2" selection-end-line="254" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Drawer.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/DashboardMainContent.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/DashboardPatients.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/listItems.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CONSTANTS.js" />
+    <entry file="file://$PROJECT_DIR$/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logo.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Chart.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/chart.js/samples/samples.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-chartjs-2/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleBarChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleSteppedLineChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3852">
+          <caret line="217" selection-start-line="217" selection-end-line="218" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dou.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MediacardPatientNumber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ActiveMedicationOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleDoughnut.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleExpansionPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SelectedListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="41" column="60" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleLineChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="420" column="12" selection-start-line="420" selection-start-column="12" selection-end-line="420" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>alert-dashboard-demo1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

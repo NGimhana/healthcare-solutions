@@ -16,18 +16,6 @@
         ]
       }
     },
-    "/MedicationOrderDataService/allmedicationorders": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited",
-        "summary": "Retrieves all the active medication orders "
-      }
-    },
     "/DiagnosticAlertDataService/reports/patient/{patientId}": {
       "get": {
         "parameters": [
@@ -186,26 +174,6 @@
         "summary": "Retrieves all the diagnostic reports corresponding to specific patient with in a date"
       }
     },
-    "/MedicationOrderDataService/medicationOrders/patient/{patientId}": {
-      "get": {
-        "parameters": [
-          {
-            "name": "patientId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "summary": "Retrieve all the Medication Reports corresponding to a specific patient given by patientId",
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited"
-      }
-    },
     "/RDBMSDataService/allpatients": {
       "get": {
         "responses": {
@@ -217,49 +185,11 @@
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited"
       }
-    },
-    "/DiagnosticAlertDataService/report/{reportId}": {
-      "get": {
-        "parameters": [
-          {
-            "name": "reportId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited"
-      }
-    },
-    "/DiagnosticAlertDataService/patient/{patientId}": {
-      "get": {
-        "parameters": [
-          {
-            "name": "patientId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited"
-      }
     }
   },
   "info": {
     "title": "EpicHealthcareAlert",
     "version": "1.0.0",
-    "description": "API for Accesing EPIC based Alerts"
+    "description": "API for Accessing EPIC based Alerts"
   }
 }

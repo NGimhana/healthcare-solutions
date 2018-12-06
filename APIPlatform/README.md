@@ -10,36 +10,19 @@ The APIs that are exposed in this solution are given below.
 2. Medication and Immunization API
     * Medication
     * MedicationAdministration
-    * MedicationOrder
     * MedicationStatement
     * Immunization
 3. Care provision API
     * CarePlan
     * Goal
 4. General clinical API
-    * AllergyIntolerance
-    * Condition
     * Procedure
     * FamilyMemberHistory
-5. Individuals API
-    * Patient
-    * Practitioner
-    * Related Person
-6. Entities API
-    * Person
-    * Contract
-7. Devices API
+5. Devices API
     * Device
-8. Patient management API
-    * Encounter
-9. Scheduling API
-    * Appointment
+6. Scheduling API
     * Schedule
     * Slot
-10. Documents API
-    * DocumentReference
-11. Structure API
-    * Binary
 
 The above APIs are categorized according to the [FHIR R2 layout](https://www.hl7.org/fhir/resourcelist.html).
 

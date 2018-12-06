@@ -2,11 +2,9 @@
 <api context="/Diagnostics" name="Diagnostics" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET" uri-template="/DiagnosticReport*">
         <inSequence>
-            <!--Capture the hospital name from the request -->
-            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
             <!--Obtain the value for the respected hospitalName parameter from the local registry-->
-            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
-            <!--Check if the header is located in the local registry entry-->
+            <property expression="get-property($url:hospitalName)" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the hospital-Name is located in the local registry entry-->
             <filter xpath="boolean(get-property('ehrSystem'))">
                 <then>
                     <property expression="$url:id" name="id" scope="default" type="STRING"/>
@@ -53,22 +51,30 @@
                     </format>
                         <args/>
                     </payloadFactory>
-                    <header action="remove" name="To" scope="default"/>
-                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
                     <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
-                    <send/>
+                    <respond/>
                 </else>
             </filter>
         </inSequence>
         <outSequence/>
-        <faultSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{ "Error":{ "error_message":"$1","error_code":"$2","error_details":"$3" } }
+             	</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_CODE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_DETAIL')"/>
+                </args>
+            </payloadFactory>
+            <log category="ERROR" level="full"/>
+            <respond/>
+        </faultSequence>
     </resource>
     <resource methods="GET" uri-template="/Observation*">
         <inSequence>
-            <!--Capture the hospital name from the request -->
-            <property expression="$url:hospitalName" name="hospitalParam" scope="default" type="STRING"/>
-            <!--Obtain the value for the respected hospitalName parameter-->
-            <property expression="get-property(get-property('hospitalParam'))" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Obtain the value for the respected hospitalName parameter from the local registry-->
+            <property expression="get-property($url:hospitalName)" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
             <filter xpath="boolean(get-property('ehrSystem'))">
                 <then>
                     <property expression="$url:id" name="id" scope="default" type="STRING"/>
@@ -125,15 +131,25 @@
                     </format>
                         <args/>
                     </payloadFactory>
-                    <header action="remove" name="To" scope="default"/>
-                    <property name="RESPONSE" scope="default" type="STRING" value="true"/>
                     <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
-                    <send/>
+                    <respond/>
                 </else>
             </filter>
         </inSequence>
         <outSequence/>
-        <faultSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{ "Error":{ "error_message":"$1","error_code":"$2","error_details":"$3" } }
+             	</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_CODE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_DETAIL')"/>
+                </args>
+            </payloadFactory>
+            <log category="ERROR" level="full"/>
+            <respond/>
+        </faultSequence>
     </resource>
     <resource methods="GET">
         <inSequence/>

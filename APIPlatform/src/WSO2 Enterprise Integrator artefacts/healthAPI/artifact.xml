@@ -20,4 +20,7 @@
     <artifact name="Devices" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/Devices.xml</file>
     </artifact>
+    <artifact name="Scheduling" groupId="com.example.healthAPI.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Scheduling.xml</file>
+    </artifact>
 </artifacts>

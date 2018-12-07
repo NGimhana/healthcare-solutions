@@ -1,0 +1,32 @@
+version: "3"
+services:
+
+  integrator:
+    build:
+      context: ./docker-ei/dockerfiles/ubuntu/integrator
+      dockerfile: Dockerfile
+    container_name: wso2ei
+    ports:
+      - "9446:9446"
+
+  apim:
+    build:
+      context: ./docker-apim/dockerfiles/ubuntu/apim
+      dockerfile: Dockerfile
+    container_name: wso2apim
+    ports:
+      - "8280:8280"
+      - "8243:8243"
+      - "9763:9763"
+      - "9443:9443"
+      - "9009:9009"
+      - "5672:5672"
+      - "9711:9711"
+      - "9611:9611"
+      - "7711:7711"
+      - "7611:7611"
+      - "10397:10397"
+    depends_on:
+      - integrator
+
+

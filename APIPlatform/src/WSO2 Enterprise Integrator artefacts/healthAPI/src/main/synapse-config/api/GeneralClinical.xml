@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/GeneralClinical" name="GeneralClinical" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/Procedure*">
+        <inSequence>
+            <!--Obtain the value for the respected hospital-Name parameter-->
+            <property expression="get-property($url:hospitalName)" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the hospital-Name is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <property expression="$url:subject" name="subject" scope="default" type="STRING"/>
+                    <property expression="$url:startDate" name="startDate" scope="default" type="STRING"/>
+                    <property expression="$url:endDate" name="endDate" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchProcedure>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <subject>{$ctx:subject}</subject>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                            </cerner.searchProcedure>
+                            <respond/>
+                        </case>
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.searchProcedure>
+                                <id>{$ctx:id}</id>
+                                <patient>{$ctx:patient}</patient>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                            </epic.searchProcedure>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <respond/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{ "Error":{ "error_message":"$1","error_code":"$2","error_details":"$3" } }
+             	</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_CODE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_DETAIL')"/>
+                </args>
+            </payloadFactory>
+            <log category="ERROR" level="full"/>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/FamilyMemberHistory*">
+        <inSequence>
+            <!--Obtain the value for the respected hospital-Name parameter-->
+            <property expression="get-property($url:hospitalName)" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the header is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:patient" name="patient" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Epic">
+                            <epic.init>
+                                <base>https://open-ic.epic.com/FHIR/api/FHIR/DSTU2</base>
+                            </epic.init>
+                            <epic.searchFamilyMemberHistory>
+                                <patient>{$ctx:patient}</patient>
+                            </epic.searchFamilyMemberHistory>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <respond/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{ "Error":{ "error_message":"$1","error_code":"$2","error_details":"$3" } }
+             	</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_CODE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_DETAIL')"/>
+                </args>
+            </payloadFactory>
+            <log category="ERROR" level="full"/>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET">
+        <inSequence/>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

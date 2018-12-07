@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/Scheduling" name="Scheduling" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence/>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/Schedule*">
+        <inSequence>
+            <!--Obtain the value for the respected hospital-Name parameter-->
+            <property expression="get-property($url:hospitalName)" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the hospital-Name is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchSchedule>
+                                <id>{$ctx:id}</id>
+                            </cerner.searchSchedule>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <respond/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{ "Error":{ "error_message":"$1","error_code":"$2","error_details":"$3" } }
+             	</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_CODE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_DETAIL')"/>
+                </args>
+            </payloadFactory>
+            <log category="ERROR" level="full"/>
+            <respond/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/Slot*">
+        <inSequence>
+            <!--Obtain the value for the respected hospital-Name parameter-->
+            <property expression="get-property($url:hospitalName)" name="ehrSystem" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <!--Check if the hospital-Name is located in the local registry entry-->
+            <filter xpath="boolean(get-property('ehrSystem'))">
+                <then>
+                    <property expression="$url:id" name="id" scope="default" type="STRING"/>
+                    <property expression="$url:slotType" name="slotType" scope="default" type="STRING"/>
+                    <property expression="$url:scheduleActor" name="scheduleActor" scope="default" type="STRING"/>
+                    <property expression="$url:location" name="location" scope="default" type="STRING"/>
+                    <property expression="$url:startDate" name="startDate" scope="default" type="STRING"/>
+                    <property expression="$url:endDate" name="endDate" scope="default" type="STRING"/>
+                    <property expression="$url:count" name="count" scope="default" type="STRING"/>
+                    <switch source="$ctx:ehrSystem">
+                        <case regex="Cerner">
+                            <cerner.init>
+                                <base>https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca</base>
+                            </cerner.init>
+                            <cerner.searchSlot>
+                                <id>{$ctx:id}</id>
+                                <slotType>{$ctx:slotType}</slotType>
+                                <scheduleActor>{$ctx:scheduleActor}</scheduleActor>
+                                <location>{$ctx:location}</location>
+                                <startDate>{$ctx:startDate}</startDate>
+                                <endDate>{$ctx:endDate}</endDate>
+                                <count>{$ctx:count}</count>
+                            </cerner.searchSlot>
+                            <respond/>
+                        </case>
+                        <default/>
+                    </switch>
+                </then>
+                <else>
+                    <log description="Fault" level="custom" separator=",">
+                        <property name="STATUS" value="Invoke fault "/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{ "Error":{ "errorType":"InvalidParameter","details":"The hospitalName parameter is invalid" } }
+                    </format>
+                        <args/>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <respond/>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <payloadFactory media-type="json">
+                <format>{ "Error":{ "error_message":"$1","error_code":"$2","error_details":"$3" } }
+             	</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_CODE')"/>
+                    <arg evaluator="xml" expression="get-property('ERROR_DETAIL')"/>
+                </args>
+            </payloadFactory>
+            <log category="ERROR" level="full"/>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

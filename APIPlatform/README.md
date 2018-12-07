@@ -35,7 +35,7 @@ This solution is implemented to support [Cerner Millennium EHR system](https://f
 
 The diagram given below depicts the process flow of the solution.
 
-![Process Flow](docs/Architectural%20Diagrams/processFlow.png)
+![Process Flow](src/docs/Architectural%20Diagrams/processFlow.png)
 
 **Step 1:**
 
@@ -52,8 +52,8 @@ In this scenario it is assumed that a particular hospital belongs to a single EH
 
 **Local Registry Entry**
 
-* Hospital A : Cerner
-* Hospital B : Epic
+* HospitalA : Cerner
+* HospitalB : Epic
 
 Next, the value paired up with the Hospital-Name (i.e. Cerner or Epic) is returned to the WSO2 EI to validate.
 
@@ -61,11 +61,11 @@ validation is carried out to check where there is any EHR system specified under
 If a system is found, then the process will continue.
 
 The diagram below explains the process flow within the WSO2 EI
-![WSO2 EI Process Flow](docs/Architectural%20Diagrams/EIProcessFlow.png)
+![WSO2 EI Process Flow](src/docs/Architectural%20Diagrams/EIProcessFlow.png)
 
 **Step 3**
 
-The switch mediator routes the request to the WSO2 EI Cerner connector or WSO2 EI Epic connector based on the EHR system the hospital belongs to.
+The switch mediator routes the request to the [WSO2 EI Cerner connector](https://store.wso2.com/store/assets/esbconnector/details/edfd56f2-cfa8-4ec1-b479-a89041cd1414) or [WSO2 EI Epic connector](https://store.wso2.com/store/assets/esbconnector/details/face7568-3bcd-4f10-882e-2941c6528df7) based on the EHR system the hospital belongs to.
 Given below are sample synapse configurations which are used to fetch the Diagnostic report from EHR systems.
 
 ##### Cerner SearchDiagnosticReport:
@@ -130,3 +130,6 @@ The sample request sent by the 2 systems are given below.
 ```
 
 Based on the EHR system the response is sent back to the API via the API Gateway.
+
+Since you have an idea about this solution.Lets try it out.
+Please refer [Deployment guide for Dockerized solution](dist/docker-products/README.md) or [Local Deployment guide](dist/scirpt-based-solution/README.md) to deploy locally.

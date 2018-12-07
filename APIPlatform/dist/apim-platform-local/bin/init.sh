@@ -5,7 +5,7 @@
 
 echo "Starting WSO2 Healthcare API Platform...";
 
-echo -e "Starting WSO2 Enterprice Integrator Server .."
+echo -e "Starting WSO2 Enterprise Integrator Server .."
 #Start EI Server
 gnome-terminal -x sh ${EI_HOME}/bin/integrator.sh & sleep 5s
 #nohup sh integrator & sleep 10s

@@ -132,4 +132,4 @@ The sample request sent by the 2 systems are given below.
 Based on the EHR system the response is sent back to the API via the API Gateway.
 
 Since you have an idea about this solution.Lets try it out.
-Please refer [Deployment guide for Dockerized solution](dist/docker-products/README.md) or [Local Deployment guide](dist/scirpt-based-solution/README.md) to deploy locally.
+Please refer [Deployment guide for Dockerized solution](dist/docker-products/README.md) or [Local Deployment guide](dist/apim-platform-local/README.md) to deploy locally.
